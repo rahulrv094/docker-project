@@ -1,0 +1,19 @@
+name: Build & Push Docker Image
+on: 
+  paths:
+    - 'testfolder/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: docker build -t myimage:latest .
+
+      - name: Push the Docker image to DockerHub
+        run: |
+          echo "${{ secrets.DOCKER_PASS }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+          docker push myimage:latest
