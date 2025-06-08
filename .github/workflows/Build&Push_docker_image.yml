@@ -3,6 +3,9 @@ on:
   push:
     paths:
       - 'testfolder/**'  # Trigger workflow on changes in the testfolder
+  
+  # Manually triggered via GitHub Actions UI (workflow dispatch)
+  workflow_dispatch:
 
 jobs:
   build:
