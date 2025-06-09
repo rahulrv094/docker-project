@@ -1,4 +1,4 @@
-To completely remove Docker from Ubuntu:
+**********To completely remove Docker from Ubuntu:
 
 ## Step 1: Stop Docker Service
 '''
@@ -9,6 +9,7 @@ sudo systemctl stop docker.socket
 ---
 
 ## Step 2: Uninstall Docker Packages
+
 '''
 sudo apt-get purge -y docker-engine docker docker.io docker-ce docker-ce-cli containerd runc
 '''
@@ -32,3 +33,4 @@ sudo rm -rf /var/lib/containerd
 
 ## Step 5: Remove Docker Group (Optional)
 sudo groupdel docker
+**********************
