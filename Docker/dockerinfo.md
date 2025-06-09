@@ -1,3 +1,5 @@
+---
+
 ````markdown
 # 🧹 How to Completely Remove Docker from Ubuntu
 
@@ -69,3 +71,6 @@ Command 'docker' not found
 ```
 
 ---
+
+Let me know if you'd like this saved as a `.md` file or want to include Docker Compose/Snap uninstallation steps too.
+```
