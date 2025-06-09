@@ -1,7 +1,4 @@
----
-
-````markdown
-# 🧹 How to Completely Remove Docker from Ubuntu
+## 🧹 How to Completely Remove Docker from Ubuntu
 
 Follow these steps to fully uninstall Docker and clean up all associated files and configurations.
 
@@ -71,6 +68,3 @@ Command 'docker' not found
 ```
 
 ---
-
-Let me know if you'd like this saved as a `.md` file or want to include Docker Compose/Snap uninstallation steps too.
-```
