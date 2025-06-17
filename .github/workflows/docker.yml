@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main  # or 'master' depending on your default branch
+  workflow_dispatch:
 
 jobs:
   build:
@@ -21,9 +22,9 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          docker build -f testfolder/new/Dockerfile -t rahulrv098/myapp:${GITHUB_SHA} -t rahulrv098/myapp:latest .
+          docker build -f testfolder/new/Dockerfile -t rahulrv098/myapp:v${GITHUB_RUN_NUMBER} -t rahulrv098/myapp:latest .
 
       - name: Push both image tags to Docker Hub
         run: |
-          docker push rahulrv098/myapp:${GITHUB_SHA}
+          docker push rahulrv098/myapp:v${GITHUB_RUN_NUMBER}
           docker push rahulrv098/myapp:latest
