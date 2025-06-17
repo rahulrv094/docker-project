@@ -1,0 +1,29 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main  # or 'master' depending on your default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: rahulrv098
+          password: 9988840585r
+
+      - name: Build and tag Docker image
+        run: |
+          docker build -f testfolder/new/Dockerfile -t rahulrv098/myapp:${GITHUB_SHA} -t rahulrv098/myapp:latest .
+
+      - name: Push both image tags to Docker Hub
+        run: |
+          docker push rahulrv098/myapp:${GITHUB_SHA}
+          docker push rahulrv098/myapp:latest
